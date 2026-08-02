@@ -18,3 +18,10 @@ expertMode = true
 [postMerge]
 path = "scripts/post-merge.sh"
 timeoutMs = 20000
+
+[userenv]
+
+[userenv.shared]
+VITE_FIREBASE_VAPID_KEY = "BBVHmDF3CSoSJXayohy7SKo2jdfqTptZJbWi2Nwk400qHzUDFvZH_nJQVnVTz-Ry80IkxcNREaxmXyjeyWcW2_Q"
+VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR5d2Jmbm1vY3JxdmlscXFnY2t2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUzOTUzNDMsImV4cCI6MjEwMDk3MTM0M30.EMEioPMXmHwKWToQBslhO1BjdtkynjPwOwbCFYzYXd4"
+VITE_SUPABASE_URL = "https://tywbfnmocrqvilqqgckv.supabase.co"

@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Westly Hotel"
+description = "Full-stack hotel management system with a public-facing website (rooms, restaurant, gallery, bookings) and a staff admin portal covering front desk, housekeeping, bar, laundry, financials, inventory, task scheduling, and more. Backed by Firebase Auth + Firestore and Supabase storage."
+version = "1.0.0"
+id = "artifacts/westly-hotel"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25374
+
+[services.development]
+run = "pnpm --filter @workspace/westly-hotel run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/westly-hotel", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/westly-hotel/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25374"
+BASE_PATH = "/"
