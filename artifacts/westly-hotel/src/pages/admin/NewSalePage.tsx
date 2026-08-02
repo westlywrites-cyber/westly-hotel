@@ -129,7 +129,7 @@ export default function NewSalePage() {
           const invRef = doc(db, "inventory", cartItem.id);
           const invSnap = await transaction.get(invRef);
           if (!invSnap.exists()) throw new Error(`Item "${cartItem.name}" not found in inventory.`);
-          const currentQty = invSnap.data().quantity;
+          const currentQty = invSnap.data()!.quantity;
           if (currentQty < cartItem.quantity) {
             throw new Error(`Insufficient stock for "${cartItem.name}": only ${currentQty} left.`);
           }
@@ -139,7 +139,7 @@ export default function NewSalePage() {
         for (const cartItem of inventoryCartItems) {
           const invRef = doc(db, "inventory", cartItem.id);
           const invSnap = await transaction.get(invRef);
-          const currentQty = invSnap.data().quantity;
+          const currentQty = invSnap.data()!.quantity;
           transaction.update(invRef, { quantity: currentQty - cartItem.quantity, updatedAt: serverTimestamp() });
         }
 

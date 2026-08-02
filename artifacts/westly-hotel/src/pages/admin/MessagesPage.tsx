@@ -176,7 +176,7 @@ export default function MessagesPage() {
                         <p className={`text-sm truncate ${msg.status === "new" ? "font-semibold" : "font-medium"}`}>
                           {msg.name}
                         </p>
-                        <span className="text-xs text-muted-foreground shrink-0">{timeAgo(msg.created_at)}</span>
+                        <span className="text-xs text-muted-foreground shrink-0">{timeAgo(new Date(msg.created_at))}</span>
                       </div>
                       <p className="text-xs text-muted-foreground truncate mt-0.5">{msg.email}</p>
                       {msg.subject && <p className="text-sm mt-1 truncate">{msg.subject}</p>}

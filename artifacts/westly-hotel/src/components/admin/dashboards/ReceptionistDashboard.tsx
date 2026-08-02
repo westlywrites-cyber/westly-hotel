@@ -169,7 +169,7 @@ export default function ReceptionistDashboard() {
                         <p className={`text-sm truncate ${m.status === "new" ? "font-semibold" : "font-medium"}`}>{m.name}</p>
                         <p className="text-xs text-muted-foreground truncate">{m.subject || m.message}</p>
                       </div>
-                      <span className="text-xs text-muted-foreground shrink-0 ml-2">{timeAgo(m.created_at)}</span>
+                      <span className="text-xs text-muted-foreground shrink-0 ml-2">{timeAgo(new Date(m.created_at))}</span>
                     </div>
                   </Link>
                 ))}

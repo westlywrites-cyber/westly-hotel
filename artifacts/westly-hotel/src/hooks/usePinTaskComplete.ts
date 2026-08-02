@@ -19,7 +19,7 @@ import { useAuth } from "@/contexts/AuthContext";
 export function usePinTaskComplete(delayMs: number = 2500) {
   const { sessionType, endPinSessionAfterTask } = useAuth();
   const [endingSession, setEndingSession] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const isPinSession = sessionType === "pin";
 
